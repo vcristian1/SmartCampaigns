@@ -11,7 +11,7 @@ contract web3campaign {
         uint256 amountCollected;
         string image;
         address[] donators;
-        uint256[] donations
+        uint256[] donations;
     }
 
     mapping(uint256 => Campaign) public campaigns;
@@ -22,7 +22,7 @@ contract web3campaign {
         Campaign storage campaign = campaigns[numberOfCampaigns];
 
         
-        require(campaign.deadline < block.timestamp, "The deadline should be a date in the future.")
+        require(campaign.deadline < block.timestamp, "The deadline should be a date in the future.");
 
         campaign.owner = _owner;
         campaign.title = _title;
@@ -34,11 +34,11 @@ contract web3campaign {
 
         numberOfCampaigns++;
 
-        return numberOfCampaigns -1;
+        return numberOfCampaigns - 1;
     }
 
     function donateToCampaign(uint256 _id) public payable {
-        unit256 amount = msg.value;
+        uint256 amount = msg.value;
 
         Campaign storage campaign = campaigns[_id];
 
@@ -52,9 +52,21 @@ contract web3campaign {
         }
     }
 
-    function getDonators(uint256 _id) view public return(address[] memory, uint256[] memory) {
+    function getDonators(uint256 _id) view public returns (address[] memory, uint256[] memory) {
         return (campaigns[_id].donators, campaigns[_id].donations);
     }
     
-    function getCampaigns() {}
+    function getCampaigns() public view returns (Campaign[] memory) {
+        // We are creating a new variable called allCampaigns which is of a type array of multiple campaign structures. 
+        // We are just creating an empty array with as many empty elements as there are actual campaigns.
+        Campaign[] memory allCampaigns = new Campaign[](numberOfCampaigns);
+
+        for (uint i = 0; i < numberOfCampaigns; i++) {
+            Campaign storage item = campaigns[i];
+
+            allCampaigns[i] = item;
+        }
+
+        return allCampaigns;
+    }
 }
