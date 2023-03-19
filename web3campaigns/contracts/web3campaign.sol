@@ -52,7 +52,9 @@ contract web3campaign {
         }
     }
 
-    function getDonators() {}
+    function getDonators(uint256 _id) view public return(address[] memory, uint256[] memory) {
+        return (campaigns[_id].donators, campaigns[_id].donations);
+    }
     
     function getCampaigns() {}
 }
