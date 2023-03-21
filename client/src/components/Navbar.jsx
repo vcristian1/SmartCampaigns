@@ -5,6 +5,10 @@ import { logo, menu, search, thirdweb } from '../assets';
 import { navlinks } from '../constants';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const [isActive, setIsActive] = useState("dashboard");
+  const [toggleDrawer, setToggleDrawer] = useState(false);
+
   return (
     <div>Navbar</div>
   )
