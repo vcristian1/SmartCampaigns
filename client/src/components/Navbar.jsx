@@ -30,11 +30,13 @@ const Navbar = () => {
           else 'connect()'
          }}
         />
+
         <Link to="/profile">
-          <div className='w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] flex justify-center items-center cursor-pointer'>
+          <div className='w-[52px] h-[52px] rounded-full bg-[#2c2f32] flex justify-center items-center cursor-pointer'>
             <img src={thirdweb} alt="third-web-icon" className='w-[60%] h-[60%] object-contain'/>
           </div>
         </Link>
+
       </div>
     </div>
   )
