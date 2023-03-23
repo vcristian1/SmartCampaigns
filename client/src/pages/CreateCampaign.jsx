@@ -5,6 +5,7 @@ import { ethers } from 'ethers';
 import { money } from '../assets';
 import { CustomButton } from '../components';
 import { checkIfImage } from '../utils';
+import FormField from '../components';
 
 const CreateCampaign = () => {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ const CreateCampaign = () => {
 
       <form action="" onSubmit={handleSubmit} className="w-full mt-[65px] flex flex-col gap-[30px]">
         <div className='flex flex-wrap gap-[40px]'>
-          
+          <FormField />
         </div>
       </form>
     </div>
