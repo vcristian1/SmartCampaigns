@@ -11,6 +11,25 @@ const StateContextProvider = ({ children }) => {
 
     const address = useAddress();
     const connect = useMetamask();
+
+    const publishCampaign = async (form) => {
+        
+        try {
+            const data = await createCampaign([
+                address, //owner
+                form.title, //title
+                form.description, //description
+                form.target, //goal
+                new Date (form.deadline).getTime() / 1000, //deadline, this is going to give us access to a number of seconds passed since 1970
+                form.image,
+            ])
+            console.log("contract call successful", data)
+        } catch (error) {
+            console.log("contract call failed", error)
+        }
+
+        
+    }
 }
 
 export default StateContextProvider;
