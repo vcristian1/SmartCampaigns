@@ -31,6 +31,7 @@ const CreateCampaign = () => {
       </div>
 
       <form action="" onSubmit={handleSubmit} className="w-full mt-[65px] flex flex-col gap-[30px]">
+
         <div className='flex flex-wrap gap-[40px]'>
           <FormField 
            labelName="Your Name *"
@@ -59,29 +60,40 @@ const CreateCampaign = () => {
           <img src={money} alt={money} className="w-[40px] h-[40px] object-contain"/>
           <h4 className='font-epilogue font-bold text-[25px] text-white ml-[20px]'>You will get 100% of the raised amount</h4>
         </div>
+
         <div className='flex flex-wrap gap-[40px]'>
           <FormField
           labelName="Goal *"
-          placeholder="Enter the fundraising goal"
+          placeholder="ETH 0.50"
           inputType="number"
-          value={form.goal}
+          value={form.target}
           handleChange={() => {}} 
           />
           <FormField
           labelName="End Date *"
-          placeholder="Write the end date"
+          placeholder="End Date"
           inputType="date"
-          value={form.date}
+          value={form.deadline}
           handleChange={() => {}} 
           />
         </div>
+
         <FormField
          labelName="Campaign Image *"
          placeholder="Place image URL of your Smart Campaign"
          inputType="text"
-         value={form.imgUrl}
+         value={form.image}
          handleChange={() => {}} 
         />
+
+        <div className='flex justify-center items-center mt-[40px]'>
+          <CustomButton 
+           btnType="submit"
+           title="Submit New Campaign"
+           styles="bg-[#1dc071]"
+          />
+
+        </div>
       </form>
     </div>
   )
