@@ -48,24 +48,31 @@ const CreateCampaign = () => {
           />
         </div>
         <FormField
-         labelName="Your Campaign *"
-         placeholder="Write a Title"
+         labelName="Story *"
+         placeholder="Write your story"
          inputType="text"
-         value={form.title}
+         value={form.story}
          handleChange={() => {}} 
         />
         <FormField
-         labelName="Your Campaign *"
-         placeholder="Write a Title"
-         inputType="text"
-         value={form.title}
+         labelName="Goal *"
+         placeholder="Enter the fundraising goal"
+         inputType="number"
+         value={form.goal}
          handleChange={() => {}} 
         />
         <FormField
-         labelName="Your Campaign *"
-         placeholder="Write a Title"
+         labelName="End Date *"
+         placeholder="Write the end date"
+         inputType="date"
+         value={form.date}
+         handleChange={() => {}} 
+        />
+        <FormField
+         labelName="Campaign Image *"
+         placeholder="Place image URL of your Smart Campaign"
          inputType="text"
-         value={form.title}
+         value={form.imgUrl}
          handleChange={() => {}} 
         />
       </form>
