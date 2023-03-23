@@ -59,21 +59,22 @@ const CreateCampaign = () => {
           <img src={money} alt={money} className="w-[40px] h-[40px] object-contain"/>
           <h4 className='font-epilogue font-bold text-[25px] text-white ml-[20px]'>You will get 100% of the raised amount</h4>
         </div>
-
-        <FormField
-         labelName="Goal *"
-         placeholder="Enter the fundraising goal"
-         inputType="number"
-         value={form.goal}
-         handleChange={() => {}} 
-        />
-        <FormField
-         labelName="End Date *"
-         placeholder="Write the end date"
-         inputType="date"
-         value={form.date}
-         handleChange={() => {}} 
-        />
+        <div className='flex flex-wrap gap-[40px]'>
+          <FormField
+          labelName="Goal *"
+          placeholder="Enter the fundraising goal"
+          inputType="number"
+          value={form.goal}
+          handleChange={() => {}} 
+          />
+          <FormField
+          labelName="End Date *"
+          placeholder="Write the end date"
+          inputType="date"
+          value={form.date}
+          handleChange={() => {}} 
+          />
+        </div>
         <FormField
          labelName="Campaign Image *"
          placeholder="Place image URL of your Smart Campaign"
