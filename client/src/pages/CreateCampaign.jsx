@@ -5,7 +5,7 @@ import { ethers } from 'ethers';
 import { money } from '../assets';
 import { CustomButton } from '../components';
 import { checkIfImage } from '../utils';
-import FormField from '../components';
+import { FormField } from '../components';
 
 const CreateCampaign = () => {
   const navigate = useNavigate();
@@ -32,8 +32,42 @@ const CreateCampaign = () => {
 
       <form action="" onSubmit={handleSubmit} className="w-full mt-[65px] flex flex-col gap-[30px]">
         <div className='flex flex-wrap gap-[40px]'>
-          <FormField />
+          <FormField 
+           labelName="Your Name *"
+           placeholder="John Doe"
+           inputType="text"
+           value={form.name}
+           handleChange={() => {}}
+          />
+          <FormField 
+           labelName="Your Campaign *"
+           placeholder="Write a Title"
+           inputType="text"
+           value={form.title}
+           handleChange={() => {}}
+          />
         </div>
+        <FormField
+         labelName="Your Campaign *"
+         placeholder="Write a Title"
+         inputType="text"
+         value={form.title}
+         handleChange={() => {}} 
+        />
+        <FormField
+         labelName="Your Campaign *"
+         placeholder="Write a Title"
+         inputType="text"
+         value={form.title}
+         handleChange={() => {}} 
+        />
+        <FormField
+         labelName="Your Campaign *"
+         placeholder="Write a Title"
+         inputType="text"
+         value={form.title}
+         handleChange={() => {}} 
+        />
       </form>
     </div>
   )
